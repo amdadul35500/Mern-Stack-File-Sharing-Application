@@ -6,7 +6,7 @@ const filesRoute = require("./routes/files");
 const showRoute = require("./routes/show");
 const downloadRoute = require("./routes/download");
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
 dotenv.config();
 app.use(express.json());
