@@ -42,10 +42,13 @@ const fatchFileUrl = async (file) => {
   const formData = new FormData();
   formData.append("myfile", file);
 
-  const res = await fetch("http://localhost:3000/api/files", {
-    method: "POST",
-    body: formData,
-  });
+  const res = await fetch(
+    "https://file-sharing-app-node.herokuapp.com/api/files",
+    {
+      method: "POST",
+      body: formData,
+    }
+  );
 
   const data = await res.json();
   fileURL.value = data.file;
@@ -81,13 +84,16 @@ emailForm.addEventListener("submit", async (e) => {
     emailFrom: emailForm.elements["from-email"].value,
   };
 
-  const response = await fetch("http://localhost:3000/api/files/send", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(formData),
-  });
+  const response = await fetch(
+    "https://file-sharing-app-node.herokuapp.com/api/files/send",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    }
+  );
   const data = await response.json();
 
   if (data) {
