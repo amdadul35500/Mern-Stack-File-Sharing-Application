@@ -47,7 +47,7 @@ router.post("/", (req, res) => {
       const response = await file.save();
       return res
         .status(200)
-        .json({ file: `${process.env.APP_BASE_URL}/files/${response.uuid}` });
+        .json({ file: `${process.env.APP_BASE_URL}files/${response.uuid}` });
       //http://localhost:3000/files/23hb34bh-sf4h4bm234
     } catch (error) {
       res.status(500).json({ error: "File not save" });
