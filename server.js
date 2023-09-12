@@ -1,5 +1,6 @@
 const express = require("express");
 const dotenv = require("dotenv");
+const cors = require("cors");
 const app = express();
 const connectionDb = require("./config/db");
 const filesRoute = require("./routes/files");
@@ -7,6 +8,10 @@ const showRoute = require("./routes/show");
 const downloadRoute = require("./routes/download");
 
 const PORT = process.env.PORT || 3000;
+app.use(cors({
+  origin: "*",
+  credentials: true,
+}));
 
 dotenv.config();
 app.use(express.json());
