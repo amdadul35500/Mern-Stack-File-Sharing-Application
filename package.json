@@ -6,6 +6,9 @@
   "scripts": {
     "start": "node server.js"
   },
+  "engines": {
+    "node": "14.x"
+  },
   "dependencies": {
     "axios": "^0.26.0",
     "dotenv": "^16.0.0",
