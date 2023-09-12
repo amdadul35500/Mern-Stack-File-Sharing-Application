@@ -43,7 +43,7 @@ const fatchFileUrl = async (file) => {
   formData.append("myfile", file);
 
   const res = await fetch(
-    "https://file-sharing-app-node.herokuapp.com/api/files",
+    "https://file-sharing-application-gamma.vercel.app/api/files",
     {
       method: "POST",
       body: formData,
@@ -85,7 +85,7 @@ emailForm.addEventListener("submit", async (e) => {
   };
 
   const response = await fetch(
-    "https://file-sharing-app-node.herokuapp.com/api/files/send",
+    "https://file-sharing-application-gamma.vercel.app/api/files/send",
     {
       method: "POST",
       headers: {
